@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
+
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+import history from "./Utils/history";
+import DashBoard from "./pages/Dashboard"
+import Quizes from "./pages/Quizes"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Switch>
+        <Route
+          exact
+          path="/quiz"
+          component={DashBoard}
+        />
+        <Route          
+          path="/quiz/test"
+          component={Quizes}
+        />
+             
+        <Redirect to="/quiz" />
+      </Switch>
+    </Router>
   );
 }
 
