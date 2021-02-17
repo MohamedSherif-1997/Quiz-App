@@ -19,8 +19,8 @@ const styles = {
   header: {
     height: "100px",
     textAlign: "left",
-    color: "sky-blue",
-    backgroundColor: "red",
+    // color: "sky-blue",
+    backgroundColor: "floralwhite",
     fontSize: "20px",
   },
   center: {
